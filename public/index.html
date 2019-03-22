@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>WebSocket example</title>
+	<style>
+		output
+		{
+			white-space: pre-wrap;
+		}
+		form
+		{
+			display: flex;
+		}
+		form > input
+		{
+			flex: auto;
+		}
+		form > button
+		{
+			flex: none;
+		}
+	</style>
+</head>
+<body>
+
+<form>
+	<input type="text" name="message" aria-label="Сообщение" />
+	<button type="submit">Отправить</button>
+</form>
+
+<output></output>
+
+<script src="scripts/index.js"></script>
+
+</body>
+</html>
