@@ -18,7 +18,7 @@ function main(): void
 			const messages: string[] = JSON.parse( event.data );
 			
 			outputElement.textContent = messages.join( '\n' );
-		}
+		},
 	);
 	
 	const formElement = document.querySelector( 'form' );
@@ -34,15 +34,15 @@ function main(): void
 		{
 			event.preventDefault();
 			
-			const input = formElement.elements.namedItem( 'message' ) as HTMLInputElement | null;
+			const input = formElement.elements.namedItem( 'message' );
 			
-			if ( !input || !input.value )
+			if ( !( input instanceof HTMLInputElement ) )
 			{
 				return;
 			}
 			
 			socket.send( input.value );
 			input.value = '';
-		}
+		},
 	);
 }

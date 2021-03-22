@@ -15,9 +15,9 @@ const server = new WebSocket.Server(
 				typeof address === 'string'
 				? address
 				: address.port
-			)
+			),
 		);
-	}
+	},
 );
 
 const messages: string[] = [];
@@ -29,9 +29,9 @@ server.on(
 		ws.on( 'message', onClientMessage );
 		ws.send(
 			JSON.stringify( messages ),
-			onSendError
+			onSendError,
 		);
-	}
+	},
 );
 
 function onClientMessage( this: WebSocket, data: WebSocket.Data ): void
@@ -59,7 +59,7 @@ function broadcastMessages(): void
 		{
 			client.send(
 				JSON.stringify( messages ),
-				onSendError
+				onSendError,
 			);
 		}
 	}
